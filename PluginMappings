@@ -1,0 +1,6 @@
+vim-indent-object:
+    Objects:
+    ai - indentation level and above
+    ii - inner indentation
+    al - indentation level and above/below
+    ai - same as ii
