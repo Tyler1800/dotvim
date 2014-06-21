@@ -43,3 +43,12 @@
 [submodule "bundle/vim-commentary"]
 	path = bundle/vim-commentary
 	url = git://github.com/tpope/vim-commentary.git
+[submodule "bundle/vim-slime"]
+	path = bundle/vim-slime
+	url = https://github.com/jpalardy/vim-slime.git
+[submodule "bundle/vim-methodstub"]
+	path = bundle/vim-methodstub
+	url = https://github.com/Tyler1800/vim-methodstub.git
+[submodule "bundle/vim-fswitch"]
+	path = bundle/vim-fswitch
+	url = https://github.com/derekwyatt/vim-fswitch
