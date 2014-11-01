@@ -55,3 +55,6 @@
 [submodule "bundle/nimrod.vim"]
 	path = bundle/nimrod.vim
 	url = https://github.com/zah/nimrod.vim.git
+[submodule "bundle/vim-class-template"]
+	path = bundle/vim-class-template
+	url = https://github.com/Tyler1800/vim-class-template.git
