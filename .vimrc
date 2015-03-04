@@ -63,25 +63,20 @@ nmap <Leader><C-c><C-l> <Plug>SlimeLineSend
 nmap <Leader><C-c><C-m> <Plug>SlimeMotionSend
 nmap <Leader><C-c><C-g> <Plug>SlimeSendOp
 
-"clang_complete
-
-let g:clang_complete_auto=1
-let g:clang_use_library=1
-
-let g:clang_user_options='-std=c++1y'
-let g:clang_auto_select=1
-
 "syntastic
 
 let g:syntastic_cpp_compiler='clang++'
 let g:syntastic_cpp_compiler_options='-std=c++14'
+
+"YouCompleteMe
+let g:ycm_global_ycm_extra_conf='~/.vim/plugin-config/.ycm_extra.conf.py'
 
 "method-stub
 
 augroup cppauto 
 au! 
 au FileType c,cpp call <SID>CppBufferInit()
-au! BufEnter *.cpp let b:fswitchdst = 'hpp,h' | let b:fswitchlocs = '.'
+au! BufEnter *.cpp let b:fswitchdst = 'h,hpp' | let b:fswitchlocs = '.'
 au! BufEnter *.h let b:fswitchdst = 'cpp,c' | let b:fswitchlocs = '.'
 augroup END
 
