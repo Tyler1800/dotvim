@@ -55,3 +55,6 @@
 [submodule "bundle/vim-class-template"]
 	path = bundle/vim-class-template
 	url = https://github.com/Tyler1800/vim-class-template.git
+[submodule "bundle/YouCompleteMe"]
+	path = bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe.git
