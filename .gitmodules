@@ -48,7 +48,7 @@
 	url = https://github.com/Tyler1800/vim-methodstub.git
 [submodule "bundle/vim-fswitch"]
 	path = bundle/vim-fswitch
-	url = https://github.com/derekwyatt/vim-fswitch
+	url = https://github.com/derekwyatt/vim-fswitch.git
 [submodule "bundle/nimrod.vim"]
 	path = bundle/nimrod.vim
 	url = https://github.com/zah/nimrod.vim.git
