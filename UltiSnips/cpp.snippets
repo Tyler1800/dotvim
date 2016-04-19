@@ -1,0 +1,30 @@
+extends c
+
+snippet class "Class declaration" b
+class ${1:name}${2:: ${3:baseclass}} {
+public:
+	$1() = delete;
+	~$1() = default;
+
+	$1(const $1& other) = delete;
+	$1($1&& other) noexcept = delete;
+	$1& operator =(const $1& other) = delete;
+	$1& operator =($1&& other) noexcept = delete;
+
+	$0
+
+};
+endsnippet
+
+snippet fn "Function definition" b
+${1:void} ${2:name}(${3:args}) {
+	$0
+}
+endsnippet
+
+snippet ns "Namespace declaration" b
+namespace $1 {
+	$0
+}
+endsnippet
+
