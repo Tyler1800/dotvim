@@ -28,3 +28,20 @@ namespace $1 {
 }
 endsnippet
 
+snippet default_ctor "Default constructors" b
+$1(const $1& other) = default;
+$1($1&& other) noexcept = default;
+$1& operator =(const $1& other) = default;
+$1& operator =($1&& other) noexcept = default;
+endsnippet
+
+snippet delete_ctor "Delete constructors" b
+$1(const $1& other) = delete;
+$1($1&& other) noexcept = delete;
+$1& operator =(const $1& other) = delete;
+$1& operator =($1&& other) noexcept = delete;
+endsnippet
+
+snippet binary_op_params "lhs, rhs parameters" w
+$1& lhs, $1& rhs
+endsnippet
