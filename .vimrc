@@ -102,7 +102,7 @@ nnoremap <leader>rs :pyf /usr/share/clang/clang-format.py<CR>
 vnoremap <leader>rs :pyf /usr/share/clang/clang-format.py<CR>
 
 "rainbow-parenthesis
-nnoremap <F9> :RainbowParenthesesToggle<CR>
+nnoremap <F9> :RainbowParenthesesToggleAll<CR>
 
 "indent guides
 nnoremap <F5> :IndentGuidesToggle<CR>
