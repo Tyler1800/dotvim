@@ -26,6 +26,7 @@ call plug#begin('~/.vim/plug')
     Plug 'mbbill/undotree'
     Plug 'rust-lang/rust.vim'
     Plug 'nathanaelkane/vim-indent-guides'
+    Plug 'christoomey/vim-tmux-navigator'
 
     Plug 'Shougo/unite.vim'
     Plug 'Shougo/neomru.vim'
@@ -55,6 +56,8 @@ set display+=lastline
 set scrolloff=1
 set sidescrolloff=3
 
+set foldmethod=syntax
+
 set splitbelow
 set splitright
 
@@ -66,6 +69,8 @@ set incsearch
 
 "Don't treat numbers with leading 0s as octal
 set nrformats=hex
+
+set mouse=
 
 set spell spelllang=en_us
 
@@ -79,11 +84,19 @@ map <Left> <Nop>
 map <Right> <Nop>
 map <Up> <Nop>
 map <Down> <Nop>
+nmap <ScrollWheelUp> <Nop>
+nmap <S-ScrollWheelUp> <Nop>
+nmap <ScrollWheelDown> <Nop>
+nmap <S-ScrollWheelDown> <Nop>
 
 imap <Left> <Nop>
 imap <Right> <Nop>
 imap <Up> <Nop>
 imap <Down> <Nop>
+imap <ScrollWheelUp> <Nop>
+imap <S-ScrollWheelUp> <Nop>
+imap <ScrollWheelDown> <Nop>
+imap <S-ScrollWheelDown> <Nop>
 
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -129,6 +142,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 "YouCompleteMe
 let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
+let g:ycm_rust_src_path="/usr/local/src/rust-1.14.0/src"
 
 "altr
 nmap <Leader>o <Plug>(altr-forward)
