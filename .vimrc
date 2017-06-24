@@ -3,12 +3,13 @@ filetype off
 "Load vim-plug if it is not already installed (Necessary for all further
 "plugin loading
 if empty(glob("~/.vim/autoload/plug.vim"))
-        execute '!curl -fLo ~/.vim/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
+    execute '!mkdir -p ~/.vim/autoload'
+    execute '!curl -fLo ~/.vim/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
 endif
 
 function! BuildYCM(info)
     if a:info.status == 'installed' || a:info.force
-        !python2 ./install.py --clang-completer --racer-completer
+        !python2 ./install.py
     endif
 endfunction
 
@@ -27,6 +28,9 @@ call plug#begin('~/.vim/plug')
     Plug 'rust-lang/rust.vim'
     Plug 'nathanaelkane/vim-indent-guides'
     Plug 'christoomey/vim-tmux-navigator'
+
+    Plug 'hail2u/vim-css3-syntax'
+    Plug 'leafgarland/typescript-vim'
 
     Plug 'Shougo/unite.vim'
     Plug 'Shougo/neomru.vim'
@@ -144,6 +148,12 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
 let g:ycm_rust_src_path="/usr/local/src/rust-1.14.0/src"
 
+if !exists("g:ycm_semantic_triggers")
+    let g:ycm_semantic_triggers = {}
+endif
+let g:ycm_semantic_triggers['css'] = [':']
+let g:ycm_semantic_triggers['scss'] = [':']
+
 "altr
 nmap <Leader>o <Plug>(altr-forward)
 nmap <Leader>p <Plug>(altr-back)
@@ -185,10 +195,10 @@ nnoremap <F6> :<C-u>UndotreeToggle<CR>
 "method-stub
 
 augroup cppauto 
-au! 
-au FileType c,cpp call <SID>CppBufferInit()
-au! BufEnter *.cpp let b:fswitchdst = 'h,hpp' | let b:fswitchlocs = '.'
-au! BufEnter *.h let b:fswitchdst = 'cpp,c' | let b:fswitchlocs = '.'
+    au! 
+    au FileType c,cpp call <SID>CppBufferInit()
+    au! BufEnter *.cpp let b:fswitchdst = 'h,hpp' | let b:fswitchlocs = '.'
+    au! BufEnter *.h let b:fswitchdst = 'cpp,c' | let b:fswitchlocs = '.'
 augroup END
 
 augroup yamlauto
