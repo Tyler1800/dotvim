@@ -27,7 +27,6 @@ call plug#begin('~/.vim/plug')
     Plug 'rust-lang/rust.vim'
     Plug 'nathanaelkane/vim-indent-guides'
     Plug 'christoomey/vim-tmux-navigator'
-    Plug 'vim-syntastic/syntastic'
 
     Plug 'Shougo/unite.vim'
     Plug 'Shougo/neomru.vim'
@@ -182,9 +181,6 @@ autocmd FileType unite call s:unite_buffer_settings()
 
 "undotree
 nnoremap <F6> :<C-u>UndotreeToggle<CR>
-
-"syntastic
-let g:syntastic_rust_checkers = ['rustc']
 
 "method-stub
 
