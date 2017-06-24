@@ -3,7 +3,8 @@ filetype off
 "Load vim-plug if it is not already installed (Necessary for all further
 "plugin loading
 if empty(glob("~/.vim/autoload/plug.vim"))
-        execute '!curl -fLo ~/.vim/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
+    execute '!mkdir -p ~/.vim/autoload'
+    execute '!curl -fLo ~/.vim/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
 endif
 
 function! BuildYCM(info)
@@ -194,10 +195,10 @@ nnoremap <F6> :<C-u>UndotreeToggle<CR>
 "method-stub
 
 augroup cppauto 
-au! 
-au FileType c,cpp call <SID>CppBufferInit()
-au! BufEnter *.cpp let b:fswitchdst = 'h,hpp' | let b:fswitchlocs = '.'
-au! BufEnter *.h let b:fswitchdst = 'cpp,c' | let b:fswitchlocs = '.'
+    au! 
+    au FileType c,cpp call <SID>CppBufferInit()
+    au! BufEnter *.cpp let b:fswitchdst = 'h,hpp' | let b:fswitchlocs = '.'
+    au! BufEnter *.h let b:fswitchdst = 'cpp,c' | let b:fswitchlocs = '.'
 augroup END
 
 augroup yamlauto
