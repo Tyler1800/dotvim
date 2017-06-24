@@ -28,6 +28,7 @@ call plug#begin('~/.vim/plug')
     Plug 'rust-lang/rust.vim'
     Plug 'nathanaelkane/vim-indent-guides'
     Plug 'christoomey/vim-tmux-navigator'
+    Plug 'vim-syntastic/syntastic'
 
     Plug 'hail2u/vim-css3-syntax'
     Plug 'leafgarland/typescript-vim'
@@ -200,6 +201,9 @@ augroup cppauto
     au! BufEnter *.cpp let b:fswitchdst = 'h,hpp' | let b:fswitchlocs = '.'
     au! BufEnter *.h let b:fswitchdst = 'cpp,c' | let b:fswitchlocs = '.'
 augroup END
+
+"syntastic
+let g:syntastic_rust_checkers = ['rustc']
 
 augroup yamlauto
     au!
