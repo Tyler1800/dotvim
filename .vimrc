@@ -54,6 +54,7 @@ set softtabstop=4
 set expandtab
 set smarttab
 set updatetime=500
+set virtualedit=all
 
 set formatoptions+=j
 set laststatus=2
