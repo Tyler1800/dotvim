@@ -29,6 +29,7 @@ call plug#begin('~/.vim/plug')
     Plug 'nathanaelkane/vim-indent-guides'
     Plug 'christoomey/vim-tmux-navigator'
     Plug 'vim-syntastic/syntastic'
+    Plug 'wagnerf42/vim-clippy'
 
     Plug 'hail2u/vim-css3-syntax'
     Plug 'leafgarland/typescript-vim'
@@ -147,13 +148,17 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 "YouCompleteMe
 let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
-let g:ycm_rust_src_path="/usr/local/src/rust-1.14.0/src"
+let g:ycm_rust_src_path="/usr/local/src/rust-1.18.0/src"
 
 if !exists("g:ycm_semantic_triggers")
     let g:ycm_semantic_triggers = {}
 endif
-let g:ycm_semantic_triggers['css'] = [':']
-let g:ycm_semantic_triggers['scss'] = [':']
+let g:ycm_semantic_triggers['css'] = [': ']
+let g:ycm_semantic_triggers['scss'] = [': ']
+
+nnoremap <Leader>[ :YcmCompleter GoTo<CR>
+nnoremap <Leader>re :YcmCompleter GoToReferences<CR>
+nnoremap <Leader>rd :YcmCompleter GetDoc<CR>
 
 "altr
 nmap <Leader>o <Plug>(altr-forward)
@@ -203,7 +208,8 @@ augroup cppauto
 augroup END
 
 "syntastic
-let g:syntastic_rust_checkers = ['rustc']
+let g:syntastic_rust_checkers = ['clippy']
+let g:syntastic_error_symbol = '⚠'
 
 augroup yamlauto
     au!
