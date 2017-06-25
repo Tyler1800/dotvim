@@ -159,6 +159,7 @@ let g:ycm_semantic_triggers['scss'] = [': ']
 nnoremap <Leader>[ :YcmCompleter GoTo<CR>
 nnoremap <Leader>re :YcmCompleter GoToReferences<CR>
 nnoremap <Leader>rd :YcmCompleter GetDoc<CR>
+nnoremap <Leader>rt :YcmCompleter GetType<CR>
 
 "altr
 nmap <Leader>o <Plug>(altr-forward)
