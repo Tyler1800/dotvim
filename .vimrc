@@ -131,6 +131,8 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=234 guibg=#1c1c1c
 
 "airline
 
+let g:airline_detect_spell=0
+
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
