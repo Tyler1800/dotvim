@@ -26,7 +26,7 @@ call plug#begin('~/.vim/plug')
     Plug 'airblade/vim-gitgutter'
     Plug 'mbbill/undotree'
     Plug 'rust-lang/rust.vim'
-    Plug 'nathanaelkane/vim-indent-guides'
+    Plug 'yggdroot/indentline'
     Plug 'christoomey/vim-tmux-navigator'
     Plug 'vim-syntastic/syntastic'
     Plug 'wagnerf42/vim-clippy'
@@ -124,14 +124,7 @@ vnoremap <leader>rs :pyf /usr/share/clang/clang-format.py<CR>
 "rainbow-parenthesis
 nnoremap <F9> :RainbowParenthesesToggleAll<CR>
 
-"indent guides
-nnoremap <F5> :IndentGuidesToggle<CR>
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=233 guibg=#121212
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=234 guibg=#1c1c1c
-
 "airline
-
 let g:airline_detect_spell=0
 
 if !exists('g:airline_symbols')
